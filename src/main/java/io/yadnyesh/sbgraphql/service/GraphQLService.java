@@ -36,7 +36,7 @@ public class GraphQLService {
 		File schemaFile = resource.getFile();
 		TypeDefinitionRegistry typeRegistry = new SchemaParser().parse(schemaFile);
 		RuntimeWiring wiring = buildRuntimeWiring();
-		GraphQLSchema schema = new SchemaGenerator().makeExecutableSchema(typeRegistry);
+		GraphQLSchema schema = new SchemaGenerator().makeExecutableSchema(typeRegistry, wiring);
 		graphQL = GraphQL.newGraphQL(schema).build();
 	}
 	
