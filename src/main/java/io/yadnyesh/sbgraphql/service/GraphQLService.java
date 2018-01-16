@@ -32,7 +32,7 @@ public class GraphQLService {
 	private BookDataFetcher bookDataFetcher;
 	
 	@PostConstruct
-	public void loadSchema() throws IOException {
+	private void loadSchema() throws IOException {
 		File schemaFile = resource.getFile();
 		TypeDefinitionRegistry typeRegistry = new SchemaParser().parse(schemaFile);
 		RuntimeWiring wiring = buildRuntimeWiring();
