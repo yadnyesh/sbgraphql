@@ -16,6 +16,6 @@ public class BookController {
 	
 	@PostMapping
 	public void getAllBooks(@RequestBody String query) {
-	
+		graphQLService.graphQL()
 	}
 }
