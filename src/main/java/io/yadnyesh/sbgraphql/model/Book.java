@@ -12,7 +12,6 @@ import javax.persistence.Table;
 @Table
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 public class Book {
