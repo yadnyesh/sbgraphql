@@ -27,4 +27,12 @@ public class Book {
 	private String[] authors;
 	
 	private String publishDate;
+	
+	public Book(String isn, String title, String publisher, String[] authors, String publishDate) {
+		this.isn = isn;
+		this.title = title;
+		this.publisher = publisher;
+		this.authors = authors;
+		this.publishDate = publishDate;
+	}
 }
