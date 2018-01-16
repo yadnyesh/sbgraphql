@@ -20,6 +20,8 @@ public class GraphQLService {
 	@Value("classpath:books.graphql")
 	Resource resource;
 	
+	private GraphQL graphQL;
+	
 	@PostConstruct
 	public void loadSchema() throws IOException {
 		File schemaFile = resource.getFile();
