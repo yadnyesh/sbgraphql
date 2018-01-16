@@ -41,12 +41,17 @@ public class GraphQLService {
 	}
 	
 	private RuntimeWiring buildRuntimeWiring() {
-		
 		return RuntimeWiring.newRuntimeWiring()
-				.type("Query", typeWiring ->  typeWiring
-							.dataFetcher("allBooks", allBooksDataFetcher)
-							.dataFetcher("book", bookDataFetcher)
-							.build())
+				.type("Query", typeWiring -> typeWiring
+					.dataFetcher("allBooks", allBooksDataFetcher)
+					.dataFetcher("book", bookDataFetcher))
 				.build();
 	}
+		
+	//		return RuntimeWiring.newRuntimeWiring()
+	//				.type("Query", typeWiring ->  typeWiring
+	//							.dataFetcher("allBooks", allBooksDataFetcher)
+	//							.dataFetcher("book", bookDataFetcher)
+	//							.build());
+//	}
 }
