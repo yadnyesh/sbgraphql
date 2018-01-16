@@ -1,11 +1,13 @@
 package io.yadnyesh.sbgraphql.service;
 
 import graphql.GraphQL;
+import graphql.schema.DataFetcher;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
 import graphql.schema.idl.SchemaParser;
 import graphql.schema.idl.TypeDefinitionRegistry;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,11 @@ public class GraphQLService {
 	
 	private GraphQL graphQL;
 	
+	@Autowired
+	private AllBooksDataFetcher allBooksDataFetcher;
+	@Autowired
+	private BookDataFetcher bookDataFetcher;
+	
 	@PostConstruct
 	public void loadSchema() throws IOException {
 		File schemaFile = resource.getFile();
@@ -32,6 +39,7 @@ public class GraphQLService {
 	}
 	
 	private RuntimeWiring buildRuntimeWiring() {
+		
 		return RuntimeWiring.newRuntimeWiring()
 				.type("Query", typeWiring ->  typeWiring
 							.dataFetcher("allBooks", allBooksDataFetcher)
