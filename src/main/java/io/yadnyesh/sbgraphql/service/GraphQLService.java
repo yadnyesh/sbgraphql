@@ -48,4 +48,7 @@ public class GraphQLService {
 				.build();
 	}
 	
+	public GraphQL graphQL() {
+		return graphQL;
+	}
 }
