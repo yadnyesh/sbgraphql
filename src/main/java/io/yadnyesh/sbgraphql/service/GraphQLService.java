@@ -47,11 +47,5 @@ public class GraphQLService {
 					.dataFetcher("book", bookDataFetcher))
 				.build();
 	}
-		
-	//		return RuntimeWiring.newRuntimeWiring()
-	//				.type("Query", typeWiring ->  typeWiring
-	//							.dataFetcher("allBooks", allBooksDataFetcher)
-	//							.dataFetcher("book", bookDataFetcher)
-	//							.build());
-//	}
+	
 }
