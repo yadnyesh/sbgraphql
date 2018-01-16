@@ -1,4 +1,8 @@
 
+type Query {
+    allBooks: [Books]
+    book(id: String): Book
+}
 
 type Book {
     isn: String
