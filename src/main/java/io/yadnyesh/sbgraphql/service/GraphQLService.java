@@ -32,6 +32,11 @@ public class GraphQLService {
 	}
 	
 	private RuntimeWiring buildRuntimeWiring() {
-		return null;
+		return RuntimeWiring.newRuntimeWiring()
+				.type("Query", typeWiring ->  typeWiring
+							.dataFetcher("allBooks", allBooksDataFetcher)
+							.dataFetcher("book", bookDataFetcher)
+							.build())
+				.build();
 	}
 }
